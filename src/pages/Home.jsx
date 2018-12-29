@@ -1,12 +1,17 @@
 import React from 'react'
+import _JSXStyle from 'styled-jsx/style'
 import { Carousel } from "react-bootstrap"
-import "../assets/scss/Home.scss"
 
 export default class Home extends React.Component {
 
     render() {
+        
         return (
             <div>
+                <style jsx>{`
+                    .header .navbar {margin: 0;}
+                    .App .carousel .item img { margin: auto;}
+                `}</style>
                 <Carousel>
                     <Carousel.Item>
                         <img width={900} height={500} alt="900x500" src="https://fakeimg.pl/900x500/?text=World&font=lobster" />

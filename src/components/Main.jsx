@@ -1,6 +1,5 @@
 import React from "react"
 import { Grid, Row, Col, Media } from "react-bootstrap"
-import "./Main.scss"
 
 export default class Main extends React.Component {
 
