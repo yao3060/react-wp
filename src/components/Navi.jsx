@@ -1,6 +1,5 @@
-
 import React from "react"
-import { Switch, Route, NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from "react-bootstrap"
 
@@ -26,6 +25,11 @@ export default class Navi extends React.Component {
                         <MenuItem divider />
                         <MenuItem eventKey={3.4}>Separated link</MenuItem>
                     </NavDropdown>
+                </Nav>
+                <Nav className="nav navbar-nav navbar-right hidden-sm">
+                    <NavItem href="/login">Login</NavItem>
+                    <NavItem href="/register">Register</NavItem>
+                    <NavItem href="/logout">Logout</NavItem>
                 </Nav>
             </Navbar>
         )

@@ -1,5 +1,4 @@
 import React from 'react'
-import _JSXStyle from 'styled-jsx/style'
 import { Carousel } from "react-bootstrap"
 
 export default class Home extends React.Component {
@@ -8,7 +7,7 @@ export default class Home extends React.Component {
         
         return (
             <div>
-                <style jsx>{`
+                <style jsx="true">{`
                     .header .navbar {margin: 0;}
                     .App .carousel .item img { margin: auto;}
                 `}</style>

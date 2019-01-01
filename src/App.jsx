@@ -9,6 +9,9 @@ import Blog from "./pages/Blog"
 import About from "./pages/About"
 import Contact from "./pages/Contact"
 import Error from "./pages/Error"
+import Single from "./pages/Single"
+
+import Login from "./pages/Login"
 
 class App extends React.Component {
   render() {
@@ -17,9 +20,11 @@ class App extends React.Component {
         <Header />
         <Switch>
           <Route path="/" component={Home} exact />
+          <Route path="/login" component={Login} />
           <Route path="/about" component={About}/>
           <Route path="/contact" component={Contact}/>
-          <Route path="/blog" component={Blog}/>
+          <Route path="/blog" component={Blog} />
+          <Route path="/single/:postId" component={Single}/>
           <Route component={Error}/>
         </Switch>
         <Footer />
