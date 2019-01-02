@@ -1,3 +1,5 @@
+import history from '../../history'
+
 export const userLogin = (credentials) => {
 
 
@@ -13,14 +15,19 @@ export const userLogin = (credentials) => {
             method: 'POST', // *GET, POST, PUT, DELETE, etc.
         })
         .then(response => {
-            console.log(response.status !== 200)
             
             if (response.status !== 200 ){
                 dispatch({ type: 'LOGIN_ERROR' })
             } else {
                 return response.json().then(function(json) {
                     // process your JSON further
+     
+                    for (var key in json) {
+                        localStorage.setItem(`auth.${key}`, json[key])
+                    }
                     dispatch({ type: 'LOGIN_SUCCESS', json})
+                    
+                    history.push(`/profile?from=login`)
                 });
             }
             
@@ -30,10 +37,5 @@ export const userLogin = (credentials) => {
             console.error('Error:', error)
             dispatch({ type: 'LOGIN_ERROR', error})
         })
-
-        
-
-        
-
     }
 }

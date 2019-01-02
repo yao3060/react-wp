@@ -12,21 +12,23 @@ import Error from "./pages/Error"
 import Single from "./pages/Single"
 
 import Login from "./pages/Login"
+import Profile from "./pages/Profile"
 
 class App extends React.Component {
   render() {
     return (
       <div className="App">
         <Header />
-        <Switch>
-          <Route path="/" component={Home} exact />
-          <Route path="/login" component={Login} />
-          <Route path="/about" component={About}/>
-          <Route path="/contact" component={Contact}/>
-          <Route path="/blog" component={Blog} />
-          <Route path="/single/:postId" component={Single}/>
-          <Route component={Error}/>
-        </Switch>
+          <Switch>
+            <Route path="/" component={Home} exact />
+            <Route path="/login" component={Login} />
+            <Route path="/profile" component={Profile} />
+            <Route path="/about" component={About}/>
+            <Route path="/contact" component={Contact}/>
+            <Route path="/blog" component={Blog} />
+            <Route path="/single/:postId" component={Single}/>
+            <Route component={Error}/>
+          </Switch>
         <Footer />
       </div>
     );
@@ -34,3 +36,5 @@ class App extends React.Component {
 }
 
 export default App;
+
+/** */

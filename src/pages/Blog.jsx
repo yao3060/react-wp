@@ -1,7 +1,6 @@
 import React from 'react'
-import { NavLink } from "react-router-dom"
-// import axios from "axios"
-import { Grid, Row, Col, Media } from "react-bootstrap"
+
+import { Grid, Row, Col } from "react-bootstrap"
 import Sidebar from "../components/Sidebar"
 import BlogSummary from "../components/BlogSummary"
 import { connect } from "react-redux"
@@ -59,28 +58,20 @@ class Blog extends React.Component {
             isLoaded: true,
             items: this.props.items
         });
+    }
 
-        // fetch("https://src.yaoin.net/wp-json/wp/v2/posts")
-        //     .then(res => res.json())
-        //     .then(
-        //         (result) => {
-        //             // console.log(result)
-        //             this.setState({
-        //                 isLoaded: true,
-        //                 items: result
-        //             });
-        //         },
-        //         // Note: it's important to handle errors here
-        //         // instead of a catch() block so that we don't swallow
-        //         // exceptions from actual bugs in components.
-        //         (error) => {
-        //             this.setState({
-        //                 isLoaded: true,
-        //                 error
-        //             });
-        //         }
-        //     )
-      }
+    // static getDerivedStateFromProps(props, state){
+
+    //     console.log(props, state)
+
+    //     return null;
+    // }
+
+    componentDidUpdate(prevProps, prevState) {
+        
+        console.log(prevProps, prevState)
+
+    }
 
 }
 

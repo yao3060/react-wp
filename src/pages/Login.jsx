@@ -2,12 +2,21 @@ import React from 'react'
 import { connect } from "react-redux"
 import { userLogin } from "../store/actions/authActions"
 import { Row, Col, Form, FormGroup, ControlLabel, FormControl, Checkbox, Button, Panel } from "react-bootstrap"
+import history from '../history'
 
 class Login extends React.Component {
 
     state = {
         email: '',
         password: ''
+    }
+
+    constructor(props){
+        super(props)
+        const { isAuthed } = this.props
+        if( isAuthed ) {
+            history.push(`/profile?from=login`)
+        }
     }
 
     handleSubmit = (e) => {
@@ -25,12 +34,10 @@ class Login extends React.Component {
 
     render() {
         const { authError } = this.props
-        console.log(authError)
+    
         return (
             <Row className="show-grid">
                 <Col xs={4} xsOffset={4}>
-
-
                     <Panel>
                         <Panel.Heading>
                             <Panel.Title componentClass="h3">Login</Panel.Title>
@@ -83,7 +90,8 @@ class Login extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        authError: state.auth.authError
+        authError: state.auth.authError,
+        isAuthed: state.auth.isAuthed
     }
 }
 

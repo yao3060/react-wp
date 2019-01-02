@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { BrowserRouter } from "react-router-dom"
+import { Router } from "react-router-dom"
 import App from './App.jsx'
 import * as serviceWorker from './serviceWorker';
 
@@ -9,14 +9,16 @@ import rootReducer from "./store/reducers/rootReducer"
 import { Provider } from "react-redux"
 import thunk from "redux-thunk"
 
+import history from "./history"
+
 const store = createStore(rootReducer, applyMiddleware(thunk))
 
 ReactDOM.render(
-    <BrowserRouter>
+    <Router history={history}>
         <Provider store={store}>
             <App />
         </Provider>
-    </BrowserRouter>, 
+    </Router>, 
     document.getElementById('root')
 );
 
